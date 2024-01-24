@@ -6,3 +6,4 @@ with a responsive image that changes depending on your agenda (little motivation
 to run the project:
     . "npm i"
     . "npm run dev"
+    . click on the link

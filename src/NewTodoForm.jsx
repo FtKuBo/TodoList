@@ -16,7 +16,7 @@ export function NewTodoForm({onSubmit}){
     <form onSubmit={handleSubmit} className = "form">
     <div className = "formRow">
       <label htmlFor="textLaber">Type in your task: </label>
-      <input value={newItem} onChange={e => setNewItem(e.target.value)} type="text" id="item" />
+      <input class="search" autoComplete="off" value={newItem} onChange={e => setNewItem(e.target.value)} type="text" id="item" />
     </div>
     <button className="btn">Add</button>  
   </form>

@@ -4,11 +4,17 @@
 }
 
 body {
-  background: #333;
-  color: hsl(200, 100%, 90%);
+  background: black;
+  color: hsl(69, 100%, 50%);
   max-width: 400px;
   padding: 1rem;
   margin: 0 auto;
+}
+
+.search{
+  background-color: blue;
+  color: hsl(69, 100%, 50%);
+  border:none;
 }
 
 img{
@@ -31,8 +37,8 @@ img{
 
 .btn {
   background: hsl(200, 100%, 50%, 0.1);
-  border: 1px solid hsl(200, 100%, 50%);
-  color: hsl(200, 100%, 50%);
+  border: 1px solid blue;
+  color: blue;
   padding: 0.25em 0.5em;
   border-radius: 0.25em;
   cursor: pointer;
@@ -57,7 +63,7 @@ img{
 
 .new-item-form input {
   outline: none;
-  border: 1px solid hsl(200, 100%, 40%);
+  border: 1px solid blue;
   background: hsl(200, 100%, 30%);
   border-radius: 0.25em;
   padding: 0.25em 0.5em;
