@@ -1,43 +1,51 @@
+import { NewTodoForm } from "./NewTodoForm"
+import { TodoList } from "./TodoList"
 import "./styles.css"
-import { useState} from "react"
+import { useEffect, useState} from "react"
+import { Image } from "./Image"
 
 export default function App(){
-  const [newItem, setNewItem] = useState("")
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(() =>{
+    const localValue = localStorage.getItem("ITEMS")
+    if(localValue==null) return []
+    return JSON.parse(localValue)
+  })
 
-  function handleSubmit(e){
-    e.preventDefault()
+  useEffect(() =>{
+    localStorage.setItem("ITEMS", JSON.stringify(todos))
+  },[todos])
 
+  function addTodo(title  ){
     setTodos(currentTodos =>{
-      return [ ...currentTodos,{id:crypto.randomUUID(), title:newItem,completed:false},]
+     return [ ...currentTodos,{id:crypto.randomUUID(), title , completed:false},]
+     })
+  }
+
+  function toggelTodo(id, completed){
+    setTodos(currentTodos =>  {
+      return currentTodos.map(todo => {
+        if(todo.id == id){
+          todo.completed = completed
+          return { ...todo, completed}
+        }
+
+        return todo
+      })
     })
-    
-    setNewItem("");
+  }
+
+  function deleteTodo(id){
+    setTodos(currentTodos => { 
+      return currentTodos.filter(todo => todo.id !== id)
+     })
   }
 
   return (
   <>
-  <form onSubmit={handleSubmit} className = "form">
-    <div className = "formRow">
-      <label htmlFor="textLaber">Type in your task: </label>
-      <input value={newItem} onChange={e => setNewItem(e.target.value)} type="text" id="item" />
-    </div>
-    <button className="btn">Add</button>  
-  </form>
+  <NewTodoForm onSubmit={addTodo}/>
   <h1 className="header">Todo List</h1>
-  <ul className="list">
-   {todos.map(todo =>{
-    return (
-    <li key={todo.id}>
-      <label>
-        <input type="checkbox" checked={todo.completed}/>
-        {todo.title}
-      </label>
-      <button className="btn btn-danger">Delete</button>
-    </li>
-    )
-   })}
-  </ul>
+  <TodoList todos = {todos} toggelTodo={toggelTodo} deleteTodo={deleteTodo}/>
+  <Image todos = {todos}/>
   </>
   )
 }

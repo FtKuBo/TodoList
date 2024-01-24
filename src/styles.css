@@ -11,6 +11,12 @@ body {
   margin: 0 auto;
 }
 
+img{
+  height: 100%;
+  width: 100%;
+  margin-top: 20px;
+}
+
 .new-item-form {
   display: flex;
   flex-direction: column;

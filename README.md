@@ -1,8 +1,8 @@
-# React + Vite
+# Leveraging React basic and intermediate concepts
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Creating a responsive to-do list that locally stores the tasks to not lose the data,
+with a responsive image that changes depending on your agenda (little motivation).
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+to run the project:
+    . "npm i"
+    . "npm run dev"
