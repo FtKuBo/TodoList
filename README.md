@@ -1,7 +1,7 @@
 # Leveraging React's basic and intermediate concepts.
 
-Creating a responsive to-do list that locally stores the tasks to not lose the data,
-with a responsive image that changes depending on your agenda (little motivation).
+Creating a responsive to-do list that locally stores the tasks to not lose data when refreshing the page.
+Separating the different components of the page with React.
 
 to run the project:
     . "npm i"
